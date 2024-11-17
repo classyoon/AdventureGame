@@ -12,7 +12,7 @@ import SwiftData
 struct AdventureGameApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Item.self, Tile.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,7 +25,7 @@ struct AdventureGameApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TileListView()
         }
         .modelContainer(sharedModelContainer)
     }
